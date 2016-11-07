@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Resume;
+import utils.ResumeManagement;
 
 @WebServlet("/addCV")
 public class CVmanagement extends HttpServlet {
@@ -28,21 +29,24 @@ public class CVmanagement extends HttpServlet {
 		String education = (String) request.getParameter("education");
 		String experience = (String) request.getParameter("experience");
 		String skills = (String) request.getParameter("skills");
-		Resume resume=new Resume(education,experience,skills);
+		Resume resume=new Resume(name,education,experience,skills);
 		HttpSession session=request.getSession();
+		ResumeManagement rm=new ResumeManagement();
 		if(session.getAttribute("listCV") != null){
 			
-			Map<String,Resume> listCV=(HashMap<String,Resume>)session.getAttribute("listCV");
-			listCV.put(name, resume);
+			Map<Integer,Resume> listCV=(HashMap<Integer,Resume>)session.getAttribute("listCV");
+			if(!rm.checkResumeExist(listCV,resume)){
+			listCV.put(listCV.size(), resume);
 			session.setAttribute("listCV", listCV);
+			}
 		}else{
-			Map<String,Resume> listCV=new HashMap<String,Resume>();
-			listCV.put(name, resume);
+			Map<Integer,Resume> listCV=new HashMap<Integer,Resume>();
+			listCV.put(listCV.size(), resume);
 			session.setAttribute("listCV", listCV);
 		}
 		
 		
-		getServletContext().getRequestDispatcher("/listCV.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/page2.jsp").forward(request, response);
 		
 	}
 }

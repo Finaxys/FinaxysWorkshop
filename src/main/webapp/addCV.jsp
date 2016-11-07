@@ -36,8 +36,9 @@
 		<br>
 		<br>
 
+<h2>Add Resume</h2>
 		<div class="col-lg-4 col-lg-offset-4 mt centered">
-			<h4></h4>
+			
 			<FORM Method="POST" Action="addCV">
 
 				<div class="form-group">
@@ -76,7 +77,7 @@
 	<!-- END LAYER --> <!-- START SLIDER -->
 	<div id="slider" class="rev_slider">
 		<ul>
-			<li data-transition="slideleft" data-slotamount="1"
+			<li  
 				data-thumb="resources/img/slider/6.jpg"><img
 				src="resources/img/slider/6.jpg"></li>
 

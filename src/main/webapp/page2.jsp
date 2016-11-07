@@ -33,7 +33,8 @@
 		<header> <!-- HEADLINE -->
 		<h1 data-animated="GoIn">
 			<%
-				String mail = (String) request.getAttribute("mail");
+			HttpSession mysession = request.getSession(false);
+				String mail = (String) mysession.getAttribute("mail");
 			%>
 			<b>Welcome</b>
 			<%=mail%>
@@ -41,9 +42,9 @@
 		</header>
 		<br><br><br><br>
 		<!-- START TIMER -->
-			<a href="addCV.jsp"><div class="timer_box"><h4>Add CV<br><br></h4></div></a>
-			<a href="listCV.jsp"><div class="timer_box"><h4>List CVs<br><br></h4></div></a>
-			<a href="/hdata"><div class="timer_box"><h4>Quit<br><br></h4></div></a>
+			<a href="addCV.jsp"><div class="timer_box"><h4>Add Resume<br><br></h4></div></a>
+			<a href="listCV.jsp"><div class="timer_box"><h4>All Resumes<br><br></h4></div></a>
+			<a href="/hdata"><div class="timer_box"><h4>Sign    out<br><br></h4></div></a>
 			
 			
 		<!-- END TIMER -->

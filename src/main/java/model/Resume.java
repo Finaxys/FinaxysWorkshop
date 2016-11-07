@@ -2,15 +2,24 @@ package model;
 
 public class Resume {
 	
-	String education,experience,skills;
+	String name,education,experience,skills;
 
 	
 	
-	public Resume(String education, String experience, String skills) {
+	public Resume(String name, String education, String experience, String skills) {
 		super();
+		this.name = name;
 		this.education = education;
 		this.experience = experience;
 		this.skills = skills;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEducation() {

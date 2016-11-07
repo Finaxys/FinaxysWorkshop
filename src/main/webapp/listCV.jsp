@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+<%@ page import="javax.servlet.http.HttpSession"%>
+
+<%@ page import="java.util.HashMap"%>
+<%@ page import="java.util.Map"%>
+
+<%@ page import="model.Resume"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,26 +38,43 @@
 	<!-- START HEADER -->
 	<section id="header">
 	<div class="container">
-		<header> <!-- HEADLINE -->
-		<h1 data-animated="GoIn">
+
+<h2>All Resumes</h2>
+
+		<div  align="left">
+			
 			<%
-				String mail = (String) request.getAttribute("mail");
+				HttpSession mysession = request.getSession(false);
+				if (mysession != null   &&  mysession.getAttribute("listCV") != null) {
+					Map<String, Resume> listCV = (HashMap<String, Resume>) mysession.getAttribute("listCV");
+
+					for (int i = 0; i < listCV.size(); i++) {
 			%>
-			<b>Welcome</b>
-			<%=mail%>
-		</h1>
-		</header>
-		<br><br><br><br>
-		<!-- START TIMER -->
-			<a href="/addCV.jsp"><div class="timer_box"><h4>Add CV<br><br></h4></div></a>
-			<a href="/listCV.jsp"><div class="timer_box"><h4>List CVs<br><br></h4></div></a>
-			<a href="/"><div class="timer_box"><h4>Quit<br><br></h4></div></a>
 			
+		<p>
+			<div style="font-weight:bold">
+				- <%=listCV.get(i).getName()%>:
+			</div>
+		</p>
+			<p>
+				Education: <%=listCV.get(i).getEducation()%>
+			</p>
 			
-		<!-- END TIMER -->
-		<div class="col-lg-4 col-lg-offset-4 mt centered">
-			<h4></h4>
-		
+			<p>
+				Experience: <%=listCV.get(i).getExperience()%>
+			</p>
+			
+			<p>
+				Skills: <%=listCV.get(i).getSkills()%>
+			</p>
+			<br>
+			
+			<%
+				}
+				}
+			%>
+
+
 		</div>
 
 	</div>
@@ -58,14 +83,14 @@
 	<!-- END LAYER --> <!-- START SLIDER -->
 	<div id="slider" class="rev_slider">
 		<ul>
-			<li data-transition="slideleft" data-slotamount="1"
+			<li  
 				data-thumb="resources/img/slider/6.jpg"><img
 				src="resources/img/slider/6.jpg"></li>
-		
-			
+
+
 		</ul>
 	</div>
-	<!-- END SLIDER --> </section>
+	</section>
 	<!-- END HEADER -->
 
 	<!-- Bootstrap core JavaScript

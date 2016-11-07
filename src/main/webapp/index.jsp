@@ -44,14 +44,14 @@
 					<b>Finaxys</b> Workshop
 				</h1>
 			</header>
-<!-- 		<!-- START TIMER --> -->
+<!-- 		<!-- START TIMER -->
 <!-- 		<div id="timer" data-animated="FadeIn"> -->
 <!-- 			<div id="java" class="timer_box"></div> -->
 <!-- 			<div id="build" class="timer_box"></div> -->
 <!-- 			<div id="test" class="timer_box"></div> -->
 <!-- 			<div id="ci" class="timer_box"></div> -->
 <!-- 		</div> -->
-<!-- 		<!-- END TIMER --> -->
+<!-- 		<!-- END TIMER --> 
 			<div class="col-lg-4 col-lg-offset-4 mt centered">
 				<h4></h4>
 				<FORM class="form-inline" role="form" Method="POST"
