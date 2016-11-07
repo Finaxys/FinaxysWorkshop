@@ -1,0 +1,4 @@
+model\Resume.class
+com\servlets\FirstServlet.class
+com\servlets\CVmanagement.class
+utils\ResumeManagement.class
