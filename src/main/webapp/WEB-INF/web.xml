@@ -6,13 +6,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 version="2.4">
 
-<display-name>hdata</display-name>
+<display-name>FinaxysWorkshop</display-name>
 	 <servlet>
 		 <servlet-name>FirstServlet</servlet-name>
 		 <servlet-class>com.servlets.FirstServlet</servlet-class>
 	 </servlet>
 	 <servlet-mapping>
 		 <servlet-name>FirstServlet</servlet-name>
-		 <url-pattern>/first</url-pattern>
+		 <url-pattern>/login</url-pattern>
 	 </servlet-mapping>
  </web-app>
