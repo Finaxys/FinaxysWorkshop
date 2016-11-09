@@ -13,6 +13,6 @@ version="2.4">
 	 </servlet>
 	 <servlet-mapping>
 		 <servlet-name>FirstServlet</servlet-name>
-		 <url-pattern>/login</url-pattern>
+		 <url-pattern>/FirstServlet</url-pattern>
 	 </servlet-mapping>
  </web-app>

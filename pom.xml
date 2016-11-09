@@ -26,34 +26,42 @@
       <plugin>
   <groupId>org.codehaus.cargo</groupId>
   <artifactId>cargo-maven2-plugin</artifactId>
+  <version>1.6.2</version>
+ 
   <configuration>
-    <container>
-      <containerId>tomcat7x</containerId>
-      <home>${tomcat.home}</home>
-      <dependencies>
-        <dependency>
-          <location>${tomcat.home}/common/endorsed/xalan.jar</location>
-        </dependency>
-        <dependency>
-          <location>${tomcat.home}/common/endorsed/xercesImpl.jar</location>
-        </dependency>
-      </dependencies>
-      <systemProperties>
-        <javax.xml.parsers.DocumentBuilderFactory>
-          org.apache.xerces.jaxp.DocumentBuilderFactoryImpl
-        </javax.xml.parsers.DocumentBuilderFactory>
-        <javax.xml.parsers.SAXParserFactory>
-          org.apache.xerces.jaxp.SAXParserFactoryImpl
-        </javax.xml.parsers.SAXParserFactory>
-      </systemProperties>
-    </container>
-    <configuration>
-      <type>existing</type>
-      <home>${tomcat.home}</home>
-    </configuration>
-  </configuration>
-</plugin>
 
+  <!-- Container configuration -->
+  <container>
+    <containerId>tomcat7x</containerId>
+    <type>remote</type>
+  </container>
+
+  <!-- Configuration to use with the container (which will also configure the deployer) -->
+  <configuration>
+    <type>runtime</type>
+    <properties>
+      <cargo.remote.username>test</cargo.remote.username>
+      <cargo.remote.password>test4</cargo.remote.password>
+    </properties>
+  </configuration>
+
+  <!-- Deployables configuration -->
+  <deployables>
+    <deployable>
+      <groupId>target.FinaxysWorkshop</groupId>
+      <artifactId>FinaxysWorkshop</artifactId>
+      <type>war</type>
+      <properties>
+        <context>/hdata</context>
+      </properties>
+      <pingURL>http://172.16.0.33:8080</pingURL>
+    </deployable>
+  
+  </deployables>
+
+</configuration>
+
+</plugin>
 
     </plugins>
   </build>
