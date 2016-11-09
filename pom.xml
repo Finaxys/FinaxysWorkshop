@@ -22,12 +22,39 @@
   </dependencies>
   
   <build>
-    <plugins>
+    <plugins> 
       <plugin>
-        <groupId>org.codehaus.cargo</groupId>
-        <artifactId>cargo-maven2-plugin</artifactId>
-        <version>1.6.2-SNAPSHOT</version>
-      </plugin>
+  <groupId>org.codehaus.cargo</groupId>
+  <artifactId>cargo-maven2-plugin</artifactId>
+  <configuration>
+    <container>
+      <containerId>tomcat7x</containerId>
+      <home>${tomcat.home}</home>
+      <dependencies>
+        <dependency>
+          <location>${tomcat.home}/common/endorsed/xalan.jar</location>
+        </dependency>
+        <dependency>
+          <location>${tomcat.home}/common/endorsed/xercesImpl.jar</location>
+        </dependency>
+      </dependencies>
+      <systemProperties>
+        <javax.xml.parsers.DocumentBuilderFactory>
+          org.apache.xerces.jaxp.DocumentBuilderFactoryImpl
+        </javax.xml.parsers.DocumentBuilderFactory>
+        <javax.xml.parsers.SAXParserFactory>
+          org.apache.xerces.jaxp.SAXParserFactoryImpl
+        </javax.xml.parsers.SAXParserFactory>
+      </systemProperties>
+    </container>
+    <configuration>
+      <type>existing</type>
+      <home>${tomcat.home}</home>
+    </configuration>
+  </configuration>
+</plugin>
+
+
     </plugins>
   </build>
 </project>
