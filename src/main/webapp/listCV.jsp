@@ -67,6 +67,9 @@
 			<p>
 				Skills: <%=listCV.get(i).getSkills()%>
 			</p>
+								<p>
+									Language: <%=listCV.get(i).getLanguage()%>
+								</p>
 			<br>
 			
 			<%

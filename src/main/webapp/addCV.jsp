@@ -65,6 +65,12 @@
 						placeholder="Skills"></textarea>
 				</div>
 				<br>
+					
+					<div class="form-group">
+						<textarea class="form-control" id="language" name="language"
+							placeholder="language"></textarea>
+					</div>
+					<br>
 				
 				<button type="submit" class="btn btn-info">Submit</button>
 				

@@ -29,7 +29,8 @@ public class CVmanagement extends HttpServlet {
 		String education = (String) request.getParameter("education");
 		String experience = (String) request.getParameter("experience");
 		String skills = (String) request.getParameter("skills");
-		Resume resume=new Resume(name,education,experience,skills);
+		String language = (String) request.getParameter("language");
+		Resume resume=new Resume(name,education,experience,skills, language);
 		HttpSession session=request.getSession();
 		ResumeManagement rm=new ResumeManagement();
 		if(session.getAttribute("listCV") != null){

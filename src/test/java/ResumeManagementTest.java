@@ -17,7 +17,7 @@ public class ResumeManagementTest {
 
  ResumeManagement rm=new ResumeManagement();
  Map<Integer,Resume> listCV= new HashMap<Integer,Resume>();
- Resume r1=new Resume("Nesrine Amamou","education", "experience", "skills");
+ Resume r1=new Resume("Nesrine Amamou","education", "experience", "skills", "language");
  listCV.put(0,r1);
  Assert.assertEquals("Resume does not exist",true, rm.checkResumeExist(listCV, r1));
 
@@ -29,8 +29,8 @@ public class ResumeManagementTest {
 
  ResumeManagement rm=new ResumeManagement();
  Map<Integer,Resume> listCV= new HashMap<Integer,Resume>();
- Resume r1=new Resume("Nesrine Amamou","education", "experience", "skills");
- Resume r2=new Resume("Antoine Barrier","education", "experience", "skills");
+ Resume r1=new Resume("Nesrine Amamou","education", "experience", "skills", "language");
+ Resume r2=new Resume("Antoine Barrier","education", "experience", "skills", "language");
  listCV.put(0,r1);
  Assert.assertEquals("Resume already exists",false, rm.checkResumeExist(listCV, r2));
 

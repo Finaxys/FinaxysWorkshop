@@ -2,16 +2,18 @@ package model;
 
 public class Resume {
 	
-	String name,education,experience,skills;
+	String name,education,experience,skills,language;
 
+	public Resume() {
+	}
 	
-	
-	public Resume(String name, String education, String experience, String skills) {
+	public Resume(String name, String education, String experience, String skills, String language) {
 		super();
 		this.name = name;
 		this.education = education;
 		this.experience = experience;
 		this.skills = skills;
+		this.language = language;
 	}
 
 	public String getName() {
@@ -45,7 +47,14 @@ public class Resume {
 	public void setSkills(String skills) {
 		this.skills = skills;
 	}
-	
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
 	
 
 }
